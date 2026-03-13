@@ -1,0 +1,52 @@
+{
+  "Version": "2019-10-30",
+  "StartAction": "e6a08220-0907-4bda-933d-ea745959aa6f",
+  "Metadata": {
+    "entryPointPosition": {
+      "x": 40,
+      "y": 40
+    },
+    "ActionMetadata": {
+      "60d001a4-18ca-43bf-9865-a3a7645de40d": {
+        "position": {
+          "x": 494.4,
+          "y": 209.6
+        }
+      },
+      "e6a08220-0907-4bda-933d-ea745959aa6f": {
+        "position": {
+          "x": 189.6,
+          "y": 122.4
+        }
+      }
+    },
+    "Annotations": [],
+    "name": "Terraform1",
+    "description": "",
+    "type": "contactFlow",
+    "status": "SAVED",
+    "hash": {}
+  },
+  "Actions": [
+    {
+      "Parameters": {},
+      "Identifier": "60d001a4-18ca-43bf-9865-a3a7645de40d",
+      "Type": "DisconnectParticipant",
+      "Transitions": {}
+    },
+    {
+      "Parameters": {},
+      "Identifier": "e6a08220-0907-4bda-933d-ea745959aa6f",
+      "Type": "MessageParticipant",
+      "Transitions": {
+        "NextAction": "60d001a4-18ca-43bf-9865-a3a7645de40d",
+        "Errors": [
+          {
+            "NextAction": "60d001a4-18ca-43bf-9865-a3a7645de40d",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "Version": "2019-10-30",
+  "StartAction": "20cbdb93-c66d-4764-bc80-bffd247d131f",
+  "Metadata": {
+    "entryPointPosition": {
+      "x": 40,
+      "y": 40
+    },
+    "ActionMetadata": {
+      "80e7597c-013d-4800-8737-1456c43d5084": {
+        "position": {
+          "x": 480.8,
+          "y": 240
+        }
+      },
+      "20cbdb93-c66d-4764-bc80-bffd247d131f": {
+        "position": {
+          "x": 144,
+          "y": 120.8
+        }
+      }
+    },
+    "Annotations": [],
+    "name": "testing",
+    "description": "",
+    "type": "contactFlow",
+    "status": "PUBLISHED",
+    "hash": {}
+  },
+  "Actions": [
+    {
+      "Parameters": {},
+      "Identifier": "80e7597c-013d-4800-8737-1456c43d5084",
+      "Type": "DisconnectParticipant",
+      "Transitions": {}
+    },
+    {
+      "Parameters": {
+        "Text": "hai !testing"
+      },
+      "Identifier": "20cbdb93-c66d-4764-bc80-bffd247d131f",
+      "Type": "MessageParticipant",
+      "Transitions": {
+        "NextAction": "80e7597c-013d-4800-8737-1456c43d5084",
+        "Errors": [
+          {
+            "NextAction": "80e7597c-013d-4800-8737-1456c43d5084",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    }
+  ]
+}
