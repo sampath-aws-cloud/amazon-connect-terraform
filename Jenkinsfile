@@ -8,7 +8,12 @@ pipeline {
         }
         stage ('Terraform Apply') {
             steps {
-                bat 'cd terraform/dev & terraform apply -auto-approve'
+                withCredentials([[
+                    $class:'AmazonWebServicesCredentialsBinding',
+                    credentialsId:'aws-credentials'
+                ]]){
+                     bat 'cd terraform/dev & terraform apply -auto-approve'
+                }               
             }
         }   
     }    
