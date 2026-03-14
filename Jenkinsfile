@@ -10,6 +10,7 @@ pipeline {
             steps {
                 bat 'cd terraform/dev & terraform apply -auto-approve'
             }
+            
         }   
     }    
 }
