@@ -19,7 +19,7 @@ resource "aws_connect_contact_flow" "order_status_flow" {
 #To deploy the multiple connect flows 
 
 locals {
-    flows = fileset("${path.module}/../contact-flows","*.json")
+    flows = fileset("${path.root}/terraform/contact-flows","**/*.json")
 }
 
 resource "aws_connect_contact_flow" "flows" {
@@ -27,8 +27,8 @@ resource "aws_connect_contact_flow" "flows" {
     instance_id = var.connect_instance_id
     name        = replace(each.key, ".json","")
     type        = "CONTACT_FLOW"
-    content     = file("${path.module}/../contact-flows/{each.key}")
-    description = "This flow was created by terraform"
+    content     = file("${path.root}/terraform/contact-flows/${each.key}")
+    description = "This flow was created by Terraform"
     tags ={
         Environment = "DEV"
         Project = "AmazonConnectTerraform"
