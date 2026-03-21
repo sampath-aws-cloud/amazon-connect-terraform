@@ -21,7 +21,6 @@ resource "aws_connect_contact_flow" "order_status_flow" {
 locals {
     flows = fileset("${path.root}/terraform/contact-flows","**/*.json")
 }
-
 resource "aws_connect_contact_flow" "flows" {
     for_each    = toset(local.flows)
     instance_id = var.connect_instance_id
